@@ -1,15 +1,12 @@
 #!/usr/bin/python3
-'''Function that checks whether object is an \
-    instance of a class that inherited from the class'''
+"""4. Only sub class of"""
 
 
-def is_kind_of_class(obj, a_class):
-    '''Function that checks whether object is an \
-        instance of a class that inherited from the class'''
+def inherits_from(obj, a_class):
+    """
+    A function that returns True if the object is an instance of a class
+    that inherited (directly or indirectly) from the specified class;
+    otherwise False
+    """
 
-
-    if isinstance(obj, a_class) and \
-       issubclass(a_class, obj.__class__) is False:
-        return True
-
-    return False
+    return (issubclass(type(obj), a_class) and type(obj) is not a_class)
